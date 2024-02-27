@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Confirmación</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <p>¿Está seguro de que desea borrar el héroe?</p>
+</div>
+<div class="modal-footer">
+  <span>
+    <button class="btn btn-success me-2" (click)="removeHero(id)">
+      <div>Aceptar</div>
+    </button>
+  </span>
+  <span>
+    <button class="btn btn-danger" (click)="activeModal.dismiss()">
+      <div>Cancelar</div>
+    </button>
+  </span>
+</div>

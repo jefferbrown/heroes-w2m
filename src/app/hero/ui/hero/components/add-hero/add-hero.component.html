@@ -1,0 +1,73 @@
+<div class=" d-flex align-items-center justify-content-center" style="height: 100vh;">
+  <div class="card m-auto" style="width: 400px; align-self: center;">
+      <div class="card-header">Añadir Hero</div>
+      <div class="card-body">
+        <form [formGroup]="formHero">
+          <div class="mb-3">
+            <w2m-input-hero
+              [name]="'Nombre'"
+              [label]="'Nombre'"
+              [placeholder]="'Superman'"
+              formControlName="name">
+            </w2m-input-hero>
+          </div>
+          <div class="mb-3">
+            <w2m-input-hero
+              [name]="'poder'"
+              [label]="'Poder'"
+              [placeholder]="'Fuerza, Volar'"
+    
+              formControlName="power">
+            </w2m-input-hero>
+          </div>
+          <div class="mb-3">
+            <w2m-input-hero
+              [name]="'age'"
+              [label]="'Años'"
+              [type]="'number'" 
+              formControlName="age">
+            </w2m-input-hero>
+          </div>
+          <div class="mb-3">
+            <label for="descriptionTextarea" class="form-label"
+              >Descripción</label>
+            <textarea
+              class="form-control"
+              id="descriptionTextarea"
+              rows="4"
+              formControlName="description"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="universo_textarea" class="form-label"
+              >Universo Cinematrografico</label
+            >
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              formControlName="universe_img"
+            >
+              <option>Selecciona un universo</option>
+              <option value="marvel">Marvel</option>
+              <option value="dc">DC</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button
+          type="button"
+          class="btn btn-info m-1"
+          (click)="id ? editHero() : addHero()"
+          [disabled]="this.formHero.invalid"
+        >
+          {{ id ? "Editar" : "Añadir" }}
+        </button>
+        <button type="button" class="btn btn-light m-1" routerLink="/">
+          Volver
+        </button>
+      </div>
+    </div>
+    
+  </div> 
+

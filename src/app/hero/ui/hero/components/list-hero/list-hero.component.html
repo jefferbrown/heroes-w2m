@@ -1,0 +1,29 @@
+<div class="card-footer text-body-secondary">
+  <form [formGroup]="filtersHero">
+  <input
+    type="text"
+    class="form-control"
+    id="text_input_hero"
+    formControlName="text"
+    placeholder="Buscar por nombre"
+  />
+</form>
+  <div class="m-1">
+    <a class="btn btn-primary" routerLink="/add"> Añadir </a>
+  </div>
+</div>
+
+<div *ngIf="loading; else content">
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border"> 
+    </div>
+  </div>
+</div>
+<ng-template #content>
+  <div class="row" >
+  <div class="col-md-4 col-lg-3 col-6" *ngFor="let hero of hero$ | async">
+    <w2m-card-hero [hero]="hero"></w2m-card-hero>
+  </div>
+</div>
+
+</ng-template>

@@ -1,0 +1,5 @@
+/cliente-create.usecase.ts////*////
+/cliente-find-by-id-activasusecase.ts////*////
+/cliente-find-by-id-form.usecase.ts////*////
+/cliente-remove.usecase.ts////*////
+/cliente-update.usecase.ts////*////

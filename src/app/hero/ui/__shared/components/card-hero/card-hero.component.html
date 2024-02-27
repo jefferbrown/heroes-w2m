@@ -1,0 +1,30 @@
+<div class="card m-1 p-1" style="width: 300px;">
+  <img
+    class="card-img-top"
+    [src]="'assets/' + hero.universe_img + '.jpg'"
+    alt="Card image cap"
+    style="object-fit: cover; height: 200px;"  
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ hero.name | titlecase }}</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">
+      {{ hero.power }} - {{ hero.age }}
+    </h6>
+    <p class="card-text" style="height: 100px; overflow: hidden;">
+      {{ hero.description }}
+    </p>
+
+    <button
+      class="border-0 btn-transition btn btn-outline-success"
+      routerLink="/edit/{{ hero.id }}"
+    >
+      <i class="bi bi-pencil-square"></i>
+    </button>
+    <button
+      class="btn btn-danger"
+     (click)="openModal(hero.id)"
+    >
+    <i class="bi bi-trash3"></i>
+    </button> 
+  </div>
+</div>
